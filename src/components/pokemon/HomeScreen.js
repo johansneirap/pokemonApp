@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { PokemonList } from './PokemonList';
 
 export const HomeScreen = () => {
     return (
         <div>
-            <h1>Home screen</h1>
+            <h1>Bienvenido ! :D</h1>
+            <PokemonList/>
         </div>
     )
 }

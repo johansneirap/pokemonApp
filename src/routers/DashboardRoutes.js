@@ -4,10 +4,11 @@ import { HomeScreen } from '../components/pokemon/HomeScreen'
 import { PokemonScreen } from '../components/pokemon/PokemonScreen'
 import { SearchPokemonScreen } from '../components/pokemon/SearchPokemonScreen'
 import { Navbar } from '../components/ui/Navbar'
+import { PokeState } from '../context/PokeState'
 
 export const DashboardRoutes = () => {
     return (
-        <>
+        <PokeState>
             <Navbar/>
             <div>
                 <Switch>
@@ -18,6 +19,6 @@ export const DashboardRoutes = () => {
                     <Redirect to="/"/>
                 </Switch>
             </div>
-        </>
+        </PokeState>
     )
 }
