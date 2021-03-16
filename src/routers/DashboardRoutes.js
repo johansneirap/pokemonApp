@@ -10,12 +10,12 @@ export const DashboardRoutes = () => {
     return (
         <PokeState>
             <Navbar/>
-            <div>
+            <div className="container mt-2">
                 <Switch>
                     <Route exact path="/home" component={HomeScreen}/>
                     <Route exact path="/" component={HomeScreen}/>
                     <Route exact path="/search" component={SearchPokemonScreen}/>
-                    <Route exact path="/pokemon/:pokemonId"component={PokemonScreen}/>
+                    <Route exact path="/pokemon/:pokemonId" component={PokemonScreen}/>
                     <Redirect to="/"/>
                 </Switch>
             </div>

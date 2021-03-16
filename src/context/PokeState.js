@@ -23,8 +23,6 @@ export const PokeState = (props) => {
         }
 
         )
-
-        console.log(pokes)
         dispatch({
             type: 'GET_POKES',
             payload: pokes
@@ -33,7 +31,13 @@ export const PokeState = (props) => {
 
     const getSelectedPoke = async (id) => {
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-        console.log(res);
+        const poke = res.data
+        poke.id = id;
+        poke.img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
+        dispatch({
+            type:'GET_SELECTED_POKE',
+            payload: poke
+        })
     }
 
     return (
