@@ -3,9 +3,9 @@ import { PokemonList } from './PokemonList';
 
 export const HomeScreen = () => {
     return (
-        <div>
-            <h1>Bienvenido ! :D</h1>
-            <PokemonList/>
-        </div>
+        <>
+            <h1 className="">Bienvenido ! :D</h1>
+            <PokemonList limit={151}/>
+        </>
     )
 }

@@ -10,7 +10,7 @@ export const DashboardRoutes = () => {
     return (
         <PokeState>
             <Navbar/>
-            <div className="container mt-2">
+            <div className="container-fluid mt-2 px-3">
                 <Switch>
                     <Route exact path="/home" component={HomeScreen}/>
                     <Route exact path="/" component={HomeScreen}/>
