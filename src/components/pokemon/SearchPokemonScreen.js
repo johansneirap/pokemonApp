@@ -11,7 +11,9 @@ export const SearchPokemonScreen = ({ history }) => {
 
     useEffect(() => {
         getPokes(151);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
+
     const location = useLocation();
 
     const { q = '' } = queryString.parse(location.search);
@@ -19,7 +21,6 @@ export const SearchPokemonScreen = ({ history }) => {
     const [formValues, handleInputChange] = useForm({ searchText: q });
 
     const { searchText } = formValues;
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,8 +40,8 @@ export const SearchPokemonScreen = ({ history }) => {
         <div>
             <h1>Search Pokemon screen</h1>
             <hr />
-            <div className="row">
-                <div className="col-6 mb-3">
+            <div className="row p-3">
+                <div className="col-12 col-sm-6 col-md-4 mb-3">
                     <form onSubmit={handleSubmit}>
                         <div className="input-group ">
                             <input className="form-control"
@@ -59,7 +60,7 @@ export const SearchPokemonScreen = ({ history }) => {
                 </div>
             </div>
             <h5> Search results:</h5>
-            <div className="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-3  row-cols-xl-3 g-4 mb-3">
+            <div className="row row-cols-2 row-cols-sm-3 row-cols-md-3 row-cols-lg-3  row-cols-xl-3 g-4 mb-3 p-3">
                 
                 {
                     (q === '')

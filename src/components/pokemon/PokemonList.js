@@ -8,6 +8,7 @@ export const PokemonList = ({limit}) => {
 
     useEffect(() => {
         getPokes(limit);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     return (
         <div className="animate__animated animate__fadeIn">

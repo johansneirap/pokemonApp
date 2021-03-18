@@ -11,41 +11,49 @@ export const PokeState = (props) => {
     const [state, dispatch] = useReducer(PokeReducer, initialState);
 
     const getPokes = async (limit) => {
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
-        const pokes = res.data.results.map((poke,i) => {
-            let pok = {};
-            pok = {
-                ...poke
-            };
-            pok.id=i+1;
-            pok.img=`https://pokeres.bastionbot.org/images/pokemon/${i+1}.png`;
-            return pok;
+        try {
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`);
+            const pokes = res.data.results.map((poke,i) => {
+                let pok = {};
+                pok = {
+                    ...poke
+                };
+                pok.id=i+1;
+                pok.img=`https://pokeres.bastionbot.org/images/pokemon/${i+1}.png`;
+                return pok;
+            }
+            )
+            dispatch({
+                type: 'GET_POKES',
+                payload: pokes
+            })
+        } catch (error) {
+            console.error(error);
         }
-
-        )
-        dispatch({
-            type: 'GET_POKES',
-            payload: pokes
-        })
     }
 
     const getSelectedPoke = async (id) => {
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-        const poke = res.data
-        poke.id = id;
-        poke.img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
-        dispatch({
-            type:'GET_SELECTED_POKE',
-            payload: poke
-        })
+        try {
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            const poke = res.data
+            poke.id = id;
+            poke.img = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
+            dispatch({
+                type:'GET_SELECTED_POKE',
+                payload: poke
+            })
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     return (
-        <PokeContext.Provider value={{
-            pokes: state.pokes,
-            selectedPoke: state.selectedPoke,
-            getPokes,
-            getSelectedPoke
+        <PokeContext.Provider 
+            value={{
+                pokes: state.pokes,
+                selectedPoke: state.selectedPoke,
+                getPokes,
+                getSelectedPoke
         }
         }>
             {props.children}

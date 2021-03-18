@@ -6,6 +6,7 @@ export const HomeScreen = () => {
         <>
             <h1 className="">Bienvenido ! :D</h1>
             <PokemonList limit={151}/>
+            
         </>
     )
 }

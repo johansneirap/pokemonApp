@@ -7,10 +7,10 @@ export const PokemonScreen = ({ history }) => {
     const {pokemonId} = useParams();
     const {getSelectedPoke, selectedPoke} = useContext(PokeContext);
     useEffect(() => {
-        getSelectedPoke(pokemonId)
+        getSelectedPoke(pokemonId);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     const pokemon = selectedPoke;
-    console.log(pokemon)
     const handleReturn = ()=> {
         if (history.length <= 1) {
             history.push('/');
@@ -23,7 +23,7 @@ export const PokemonScreen = ({ history }) => {
             <hr/>
             {pokemon ? <div className="row">
                 <div className=" col-sm-12 col-md-6 col-lg-4">
-                    <img src={pokemon ? pokemon.img:""} style={{maxWidth:340}} className="animate__animated animate__fadeInLeft"/>
+                    <img src={pokemon ? pokemon.img:""} alt={pokemon.name} style={{maxWidth:340}} className="animate__animated animate__fadeInLeft"/>
                 </div>
                 <div className="col">
                     <h1 className="text-capitalize"> { pokemon ?
