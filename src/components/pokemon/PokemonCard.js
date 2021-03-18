@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export const PokemonCard = ({ poke }) => {
     return (
         <div className="col">
-            <div className="card ms-3" key={poke.id} style={ {maxWidth:340}}>
+            <div className="shadow-sm card ms-3" key={poke.id} style={ {maxWidth:340}}>
                         <img src={poke.img} className="card-img-top py-1 px-1" style={ {maxWidth:330}} alt={poke.name}></img>
                         <div className="card-body">
                             <h6 className="text-capitalize "> #{poke.id} {poke.name}</h6>
