@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root{
+    --btn-success: #28a745;
+    --color-links: #2188ff;
+    --font-primary: 'Open Sans', sans-serif;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--font-primary);
+}
+body{
+    /* background: rgb(144,85,255);
+    background: linear-gradient(135deg, rgba(144,85,255,1) 0%, rgba(19,226,218,1) 100%); */
+    background: #00d2ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.logo-row{
+    margin-bottom: 1em;
+    padding-top: 2em;
+    color: white;
+}
+.logo-img{
+    max-width: 7em;
+    max-height: auto;
+}
+.btn-login{
+    margin-top: 20px;
+    background: var(--btn-success);
+    color: white;
+    width: 100%;
+    font-weight: 600;
+}
+
+.btn-login:hover{
+    background: #188632;
+    color: white;
+    font-weight: bold;
+}
+
+h5{
+    text-align: center;
+    font-family: var(--font-primary);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#passwordHelp a{
+    color: var(--color-links);
+}
+
+.form-label{
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.new-registry{
+    margin-top: 1rem;
+}
+
+a {
+    text-decoration: none
+}
+
+p{
+    font-size: 0.9rem;
+    margin:0;
+}
